@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 // Uses https://github.com/rexxars/react-markdown
 
 import React from 'react';
@@ -41,7 +43,11 @@ const getClassName = cssModules(STYLES);
 const TAG_NAMES = ['h1', 'h1', 'h2', 'h3'];
 const TEXT_STYLES = ['xxl', 'xxl', 'xl', 'lg'];
 
-const BpkMarkdownRenderer = props => {
+export type Props = {
+  oddAlternatingSection: boolean,
+};
+
+const BpkMarkdownRenderer = (props: Props) => {
   const { oddAlternatingSection, ...rest } = props;
 
   const renderers = {};
